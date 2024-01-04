@@ -1,12 +1,14 @@
-import '../styles/index.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import '../styles/index.css'
 
 import { ScrollTop } from '@/components/common/ScrollTop'
-import TanstackQueryProvider from '@/providers/TanstackQueryProvider'
-import { ToastContainer } from 'react-toastify'
 import { siteConfig } from '@/config/site'
+import TanstackQueryProvider from '@/providers/TanstackQueryProvider'
+import { EventProvider } from '@/providers/event-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
+import { ToastContainer } from 'react-toastify'
+import { Root } from '@/components/layout/root/Root'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,16 +40,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={inter.className}
       >
         <TanstackQueryProvider>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div>{children}</div>
+          <EventProvider key='viewportProvider'>
+            <ThemeProvider
+              attribute='class'
+              defaultTheme='system'
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Root>{children}</Root>
 
-            <ToastContainer />
-          </ThemeProvider>
+              <ToastContainer />
+            </ThemeProvider>
+          </EventProvider>
           <ScrollTop />
         </TanstackQueryProvider>
       </body>

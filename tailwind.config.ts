@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import { addDynamicIconSelectors } from '@iconify/tailwind'
+import { PluginAPI } from 'tailwindcss/types/config'
 
 const config = {
   darkMode: ['class'],
@@ -75,7 +76,32 @@ const config = {
       }
     }
   },
-  plugins: [addDynamicIconSelectors(), require('tailwindcss-animate')]
+  plugins: [addDynamicIconSelectors(), addShortcutPlugin, require('tailwindcss-animate')]
 } satisfies Config
+
+function addShortcutPlugin({ addUtilities }: PluginAPI) {
+  const styles = {
+    '.content-auto': {
+      'content-visibility': 'auto'
+    },
+    '.shadow-out-sm': {
+      'box-shadow': '0 0 10px rgb(120 120 120 / 10%), 0 5px 20px rgb(120 120 120 / 20%)'
+    },
+    '.backface-hidden': {
+      '-webkit-backface-visibility': 'hidden',
+      '-moz-backface-visibility': 'hidden',
+      '-webkit-transform': 'translate3d(0, 0, 0)',
+      '-moz-transform': 'translate3d(0, 0, 0)'
+    },
+    '.center': {
+      'align-items': 'center',
+      'justify-content': 'center'
+    },
+    '.fill-content': {
+      'min-height': `calc(100vh - 17.5rem)`
+    }
+  }
+  addUtilities(styles)
+}
 
 export default config

@@ -8,12 +8,10 @@ import { atom, useAtomValue } from 'jotai'
 import type { HTMLMotionProps } from 'framer-motion'
 import type { PropsWithChildren } from 'react'
 
-import { useIsMobile } from '@/atoms'
-import { clsxm } from '@/lib/helper'
+import { cn } from '@/lib/helper'
 import { jotaiStore } from '@/lib/store'
-import { usePageScrollDirectionSelector } from '@/providers/root/page-scroll-info-provider'
 
-import { RootPortal } from '../portal'
+import { useIsMobile } from '@/atoms'
 
 const fabContainerElementAtom = atom(null as HTMLDivElement | null)
 
@@ -46,7 +44,7 @@ export const FABBase = typescriptHappyForwardRef(
             initial={{ opacity: 0.3, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0.3, scale: 0.8 }}
-            className={clsxm(
+            className={cn(
               'mt-2 flex items-center justify-center',
               'h-12 w-12 text-lg md:h-10 md:w-10 md:text-base',
               'border border-accent outline-accent hover:opacity-100 focus:opacity-100 focus:outline-none',
@@ -66,44 +64,10 @@ export const FABBase = typescriptHappyForwardRef(
   }
 )
 
-export const FABPortable = typescriptHappyForwardRef(
-  (
-    props: {
-      children: React.JSX.Element
-
-      onClick: () => void
-    },
-    ref: React.ForwardedRef<HTMLButtonElement>
-  ) => {
-    const { onClick, children } = props
-    const id = useId()
-    const portalElement = useAtomValue(fabContainerElementAtom)
-
-    if (!portalElement) return null
-
-    return (
-      <RootPortal to={portalElement}>
-        <FABBase
-          ref={ref}
-          id={id}
-          onClick={onClick}
-        >
-          {children}
-        </FABBase>
-      </RootPortal>
-    )
-  }
-)
-
 export const FABContainer = (props: { children: JSX.Element | JSX.Element[] }) => {
   const isMobile = useIsMobile()
 
-  const shouldHide = usePageScrollDirectionSelector(
-    direction => {
-      return isMobile && direction === 'down'
-    },
-    [isMobile]
-  )
+  const shouldHide = true
 
   const fabContainerRef = useRef<HTMLDivElement>(null)
 

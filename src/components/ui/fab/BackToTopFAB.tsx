@@ -1,25 +1,23 @@
 'use client'
 
-import { useViewport } from '@/atoms'
 import { springScrollToTop } from '@/lib/scroller'
-import { usePageScrollLocationSelector } from '@/providers/root/page-scroll-info-provider'
 
 import { FABBase } from './FABContainer'
+import { useViewport } from '@/atoms'
+import { useMemo } from 'react'
 
 export const BackToTopFAB = () => {
   const windowHeight = useViewport(v => v.h)
-  const shouldShow = usePageScrollLocationSelector(
-    scrollTop => {
-      return scrollTop > windowHeight / 5
-    },
-    [windowHeight]
-  )
+  const shouldShow = useMemo(() => {
+    return true
+    // return scrollTop > windowHeight / 5
+  }, [windowHeight])
 
   return (
     <FABBase
       id='to-top'
       aria-label='Back to top'
-      show={shouldShow}
+      show={true}
       onClick={springScrollToTop}
     >
       <i className='icon-[mingcute--arow-to-up-line]' />
