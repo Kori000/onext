@@ -5,7 +5,7 @@ import { m } from 'framer-motion'
 import type { FC } from 'react'
 import type { ToastProps, TypeOptions } from 'react-toastify/dist/types'
 
-import { MotionButtonBase } from '../../ui/button'
+import { Button } from '@/components/ui/button'
 
 const typeMap: Record<TypeOptions, JSX.Element> = {
   success: <i className='icon-[mingcute--check-fill] text-[rgba(52,199,89)]' />,
@@ -45,16 +45,16 @@ export const ToastCard: FC<{
       {iconElement ?? typeMap[props.toastProps?.type ?? 'default']}
       <span className='text-left'>{message}</span>
 
-      <MotionButtonBase
+      <Button
         aria-label='Close toast'
-        className='absolute bottom-0 right-3 top-0 flex items-center text-sm opacity-40 duration-200 hover:opacity-80'
+        className='my-auto w-fit px-0 absolute bottom-0 right-3 top-0 flex items-center text-sm duration-200 bg-transparent hover:bg-transparent text-white/40 hover:text-white/80'
         onClick={e => {
           e.stopPropagation()
           closeToast?.()
         }}
       >
         <i className='icon-[mingcute--close-fill] p-2' />
-      </MotionButtonBase>
+      </Button>
     </MotionTag>
   )
 }
