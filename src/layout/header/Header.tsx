@@ -12,6 +12,7 @@ import { HeaderContainer } from './internal/HeaderContainer'
 import { HeaderDrawerButton } from './internal/HeaderDrawerButton'
 import { AnimatedLogo } from './internal/AnimatedLogo'
 import { UserAuth } from './internal/UserAuth'
+import { HeaderContent } from './internal/HeaderContent'
 
 export const Header = () => {
   return (
@@ -43,7 +44,7 @@ const MemoedHeader = memo(() => {
 
         {/* 桌面端导航 */}
         <HeaderDesktopCenterArea>
-          <div>中间内容</div>
+          <HeaderContent />
         </HeaderDesktopCenterArea>
 
         <div className='flex h-full w-full items-center'>
