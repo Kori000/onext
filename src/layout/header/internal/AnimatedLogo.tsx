@@ -4,23 +4,18 @@ import { useQuery } from '@tanstack/react-query'
 import { AnimatePresence, m } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 
-import { useViewport, viewportAtom } from '@/atoms'
+import { viewportAtom } from '@/atoms'
 import { useSingleAndDoubleClick } from '@/hooks/common/use-single-double-click'
 import { Routes } from '@/lib/route-builder'
 
-// import { Activity } from './Activity'
-import { useHeaderMetaShouldShow } from './hooks'
-import { SiteOwnerAvatar } from './SiteOwnerAvatar'
 import { ExtractAtomValue, useAtomValue } from 'jotai'
 import { selectAtom } from 'jotai/utils'
+import { Activity } from './Activity'
+import { SiteOwnerAvatar } from './SiteOwnerAvatar'
+import { useHeaderMetaShouldShow } from './hooks'
 
 const TapableLogo = () => {
   const router = useRouter()
-
-  const { data: isLiving } = useQuery({
-    queryKey: ['live-check'],
-    enabled: false
-  })
 
   const fn = useSingleAndDoubleClick(
     () => {
@@ -50,7 +45,7 @@ export const AnimatedLogo = () => {
     return (
       <>
         <TapableLogo />
-        {/* <Activity /> */}
+        <Activity />
       </>
     )
 
@@ -64,7 +59,7 @@ export const AnimatedLogo = () => {
           exit={{ opacity: 0 }}
           // className="scale-75"
         >
-          {/* <Activity /> */}
+          <Activity />
           <TapableLogo />
         </m.div>
       )}

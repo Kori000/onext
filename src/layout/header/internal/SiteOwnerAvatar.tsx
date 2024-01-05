@@ -1,10 +1,10 @@
 'use client'
 
+import { user } from '@/config/user'
 import { cn } from '@/lib/utils'
 
 export const SiteOwnerAvatar: Component = ({ className }) => {
-  const avatar = 'https://avatars.githubusercontent.com/u/116903901?v=4'
-
+  const avatar = user.avatar
   // TODO:是否在直播
   const isLiving = false
 

@@ -30,14 +30,17 @@ const MemoedHeader = memo(() => {
           styles['header--grid']
         )}
       >
+        {/* 移动端菜单按钮 */}
         <HeaderMobileLeftButtonArea>
           <HeaderDrawerButton />
         </HeaderMobileLeftButtonArea>
 
+        {/* 图标 */}
         <HeaderLogoArea>
           <AnimatedLogo />
         </HeaderLogoArea>
 
+        {/* 桌面端导航 */}
         <HeaderDesktopCenterArea>
           <div>中间内容</div>
         </HeaderDesktopCenterArea>
