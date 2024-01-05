@@ -20,7 +20,7 @@ const data = {
     title: '逃亡',
     artist: 'ヨルシカ'
   },
-  processName: '网易云音乐'
+  processName: 'Code'
 }
 
 import { user } from '@/config/user'
@@ -232,6 +232,7 @@ export const Activity = memo(() => {
   )
 })
 Activity.displayName = 'Activity'
+
 const cMusicProps = { processName: 'cmusic' }
 const TriggerComponent = memo<{
   processName: string
