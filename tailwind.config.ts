@@ -105,6 +105,14 @@ function addShortcutPlugin({ addUtilities }: PluginAPI) {
     },
     '.fill-content': {
       'min-height': `calc(100vh - 17.5rem)`
+    },
+    '.mask': {
+      'mask-size': 'contain',
+      'mask-repeat': 'no-repeat',
+      'mask-position': 'center'
+    },
+    '.mask-squircle': {
+      'mask-image': `url("data:image/svg+xml,%3csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M100 0C20 0 0 20 0 100s20 100 100 100 100-20 100-100S180 0 100 0Z'/%3e%3c/svg%3e")`
     }
   }
   addUtilities(styles)

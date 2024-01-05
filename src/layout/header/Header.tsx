@@ -10,6 +10,7 @@ import {
 } from './internal/HeaderArea'
 import { HeaderContainer } from './internal/HeaderContainer'
 import { HeaderDrawerButton } from './internal/HeaderDrawerButton'
+import { AnimatedLogo } from './internal/AnimatedLogo'
 
 export const Header = () => {
   return (
@@ -34,7 +35,7 @@ const MemoedHeader = memo(() => {
         </HeaderMobileLeftButtonArea>
 
         <HeaderLogoArea>
-          <div>一个 logo</div>
+          <AnimatedLogo />
         </HeaderLogoArea>
 
         <HeaderDesktopCenterArea>
