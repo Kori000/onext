@@ -8,7 +8,7 @@ import {
   HeaderDesktopCenterArea,
   HeaderMobileLeftButtonArea
 } from './internal/HeaderArea'
-import { HeaderWithShadow } from './internal/HeaderWithShadow'
+import { HeaderContainer } from './internal/HeaderContainer'
 
 export const Header = () => {
   return (
@@ -20,7 +20,7 @@ export const Header = () => {
 
 const MemoedHeader = memo(() => {
   return (
-    <HeaderWithShadow>
+    <HeaderContainer>
       <BluredBackground />
       <div
         className={cn(
@@ -44,7 +44,7 @@ const MemoedHeader = memo(() => {
           <UserAuth />
         </div> */}
       </div>
-    </HeaderWithShadow>
+    </HeaderContainer>
   )
 })
 

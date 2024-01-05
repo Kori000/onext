@@ -5,6 +5,7 @@ import { Button } from '../ui/button'
 const ScrollToTop = () => {
   return (
     <Button
+      aria-label='Scroll to top'
       id='to-top'
       variant={'outline'}
       className={
