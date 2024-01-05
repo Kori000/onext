@@ -1,22 +1,20 @@
 'use client'
 
 import { ThemeToggle } from '@/components/common/ThemeToggle'
-import { Button } from '@/components/ui/button'
-import { toast } from '@/lib/toast'
+import Checkbox2label from './checkbox2label'
+import ToastExample from './toastExample'
+import { CarouselDApiDemo } from './carouselExample'
 
 export default function Home() {
   return (
-    <main className='flex h-[200vh] justify-center items-center'>
-      <Button
-        onClick={() => {
-          toast.error('你好', {})
-        }}
-        variant='outline'
-      >
-        Button
-      </Button>
+    <main className='flex min-h-[calc(100vh-10rem)] justify-center items-center flex-col gap-10'>
+      <Checkbox2label />
 
       <ThemeToggle />
+
+      <ToastExample />
+
+      <CarouselDApiDemo />
     </main>
   )
 }

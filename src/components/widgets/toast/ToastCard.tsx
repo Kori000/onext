@@ -30,10 +30,10 @@ export const ToastCard: FC<{
     <MotionTag
       layout='position'
       className={clsx(
-        'relative w-full overflow-hidden rounded-xl shadow-md shadow-stone-800',
+        'relative w-full overflow-hidden rounded-xl shadow-md shadow-slate-200 dark:shadow-stone-800',
         'my-4 mr-4 px-4 py-5 pr-7',
-        ' backdrop-blur-sm bg-neutral-900/90',
-        'border border-neutral-900/80',
+        'bg-slate-50/90 backdrop-blur-sm dark:bg-neutral-900/90',
+        'border border-slate-100/80 dark:border-neutral-900/80',
         'space-x-4',
         'flex items-center',
         'select-none',
@@ -47,7 +47,7 @@ export const ToastCard: FC<{
 
       <Button
         aria-label='Close toast'
-        className='my-auto w-fit px-0 absolute bottom-0 right-3 top-0 flex items-center text-sm duration-200 bg-transparent hover:bg-transparent text-white/40 hover:text-white/80'
+        className='my-auto w-fit px-0 absolute bottom-0 right-3 top-0 flex items-center text-sm duration-200 bg-transparent hover:bg-transparent text-primary/40 hover:text-primary/80'
         onClick={e => {
           e.stopPropagation()
           closeToast?.()

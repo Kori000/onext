@@ -9,8 +9,10 @@ import {
   FaSolidFeatherAlt,
   FaSolidHistory,
   FaSolidUserFriends,
+  GuidanceTools,
   IcTwotoneSignpost,
   IonBook,
+  JamRssFeed,
   MdiFlask,
   MdiLightbulbOn20,
   RMixPlanet
@@ -29,6 +31,12 @@ export const headerMenuConfig: IHeaderMenu[] = [
     path: '/',
     type: 'Home',
     icon: h(FaSolidDotCircle),
+    subMenu: []
+  },
+  {
+    title: '功能',
+    path: '/fn',
+    icon: h(GuidanceTools),
     subMenu: []
   },
   {
@@ -64,14 +72,14 @@ export const headerMenuConfig: IHeaderMenu[] = [
         title: '回忆',
         icon: h(FaSolidCircle),
         path: '/timeline?memory=1'
-      },
-      {
-        title: '专栏',
-        path: '/notes/topics',
-        icon: h('i', {
-          className: 'icon-[mingcute--align-bottom-fill] flex center'
-        })
       }
+      // {
+      //   title: '专栏',
+      //   path: '/notes/topics',
+      //   icon: h('i', {
+      //     className: 'icon-[mingcute--align-bottom-fill] flex center'
+      //   })
+      // }
     ]
   },
 
@@ -98,7 +106,7 @@ export const headerMenuConfig: IHeaderMenu[] = [
       {
         title: '跃迁',
         icon: h(RMixPlanet),
-        path: 'https://travel.moe/go.html'
+        path: 'https://github.com/Kori000'
       }
     ]
   }
