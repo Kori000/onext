@@ -7,22 +7,25 @@ export interface LinkSection {
   }[]
 }
 
+export interface OtherInfo {
+  date: string
+  icp?: {
+    text: string
+    link: string
+  }
+}
+
 export const defaultLinkSections: LinkSection[] = [
   {
     name: '关于',
     links: [
       {
         name: '关于本站',
-        href: '/'
+        href: '/about-site'
       },
       {
         name: '关于我',
-        href: '/'
-      },
-      {
-        name: '关于此项目',
-        href: '',
-        external: true
+        href: '/about-me'
       }
     ]
   },
@@ -31,27 +34,32 @@ export const defaultLinkSections: LinkSection[] = [
     links: [
       {
         name: '时间线',
-        href: '/'
+        href: '/timeline'
       }
     ]
   },
   {
     name: '联系',
     links: [
-      {
-        name: '写留言',
-        href: '/'
-      },
+      // {
+      //   name: '写留言',
+      //   href: '/message'
+      // },
       {
         name: '发邮件',
-        href: '',
+        href: 'mailto:kexin@korix.top',
         external: true
       },
       {
         name: 'GitHub',
-        href: '',
+        href: 'https://github.com/Kori000',
         external: true
       }
     ]
   }
 ]
+
+export interface FooterConfig {
+  linkSections: LinkSection[]
+  otherInfo: OtherInfo
+}

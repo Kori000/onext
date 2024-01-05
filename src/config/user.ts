@@ -13,3 +13,11 @@ export const user: UserModel = {
   name: 'Kori',
   avatar: 'https://avatars.githubusercontent.com/u/116903901?v=4'
 }
+
+export const icp: {
+  text: string
+  link: string
+} = {
+  text: '苏ICP备2023042732号',
+  link: '#'
+}

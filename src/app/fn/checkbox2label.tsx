@@ -6,7 +6,7 @@ const Checkbox2label = () => {
   return (
     <div className='flex center gap-2 '>
       <Checkbox id='terms' />
-      <Label htmlFor='terms'>我们是一伙的</Label>
+      <Label htmlFor='terms'>这个是主题切换 ↓ </Label>
     </div>
   )
 }
