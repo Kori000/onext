@@ -6,7 +6,7 @@ import { toast } from '@/lib/toast'
 
 export default function Home() {
   return (
-    <main className='flex justify-center items-center'>
+    <main className='flex h-[200vh] justify-center items-center'>
       <Button
         onClick={() => {
           toast.error('你好', {})

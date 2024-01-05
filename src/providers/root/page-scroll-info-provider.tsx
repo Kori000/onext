@@ -11,7 +11,7 @@ import { createAtomSelector } from '@/lib/atom'
 /**
  * 页面距离顶部滚动的距离
  */
-const pageScrollLocationAtom = atom(0)
+export const pageScrollLocationAtom = atom(0)
 
 /**
  * 页面滚动的方向
@@ -82,6 +82,7 @@ const usePageScrollLocation = () => useAtomValue(pageScrollLocationAtom)
 const usePageScrollDirection = () => useAtomValue(pageScrollDirectionAtom)
 
 const usePageScrollLocationSelector = createAtomSelector(pageScrollLocationAtom)
+
 const usePageScrollDirectionSelector = createAtomSelector(pageScrollDirectionAtom)
 
 /**
