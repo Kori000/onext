@@ -1,15 +1,24 @@
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
   return (
-    <div className=' text-center w-full  mt-9 '>
+    <div className=' text-center w-full mt-9  '>
+      <Button
+        asChild
+        className='mb-10 '
+      >
+        <Link href='/fn'>前往功能页面</Link>
+      </Button>
+
       {Array.from({ length: 100 }).map((_, index) => {
         return (
           <div
             key={index}
-            className='text-2xl font-bold text-primary/20'
+            className='text-lg tracking-wider  text-primary/20'
           >
-            页面
+            回到顶部↘
           </div>
         )
       })}
