@@ -46,7 +46,7 @@ const AccessibleMenu: Component = () => {
             initial={{ y: -20 }}
             animate={{ y: 0 }}
             exit={{ y: -20, opacity: 0 }}
-            className='fixed left-0 right-0 top-[3rem] z-10 flex justify-center duration-[100ms]'
+            className='fixed left-0 right-0 top-[3rem] z-10 flex justify-center duration-100'
           >
             <ForDesktop />
           </m.div>
@@ -63,7 +63,7 @@ const AnimatedMenu: Component = ({ children }) => {
   const shouldHideNavBg = !hasMetaInfo && opacity === 0
   return (
     <m.div
-      className='duration-[100ms]'
+      className='duration-100'
       style={{
         opacity: hasMetaInfo ? opacity : 1,
         visibility: opacity === 0 && hasMetaInfo ? 'hidden' : 'visible'
