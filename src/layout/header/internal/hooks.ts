@@ -84,6 +84,7 @@ const headerHasMetaInfoAtom = atom(get => {
 
   return title !== '' && description !== ''
 })
+
 export const useHeaderHasMetaInfo = () => {
   return useAtomValue(headerHasMetaInfoAtom)
 }

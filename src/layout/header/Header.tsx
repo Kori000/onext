@@ -9,6 +9,7 @@ import {
   HeaderMobileLeftButtonArea
 } from './internal/HeaderArea'
 import { HeaderContainer } from './internal/HeaderContainer'
+import { HeaderDrawerButton } from './internal/HeaderDrawerButton'
 
 export const Header = () => {
   return (
@@ -29,7 +30,7 @@ const MemoedHeader = memo(() => {
         )}
       >
         <HeaderMobileLeftButtonArea>
-          <div>这个是手机左边</div>
+          <HeaderDrawerButton />
         </HeaderMobileLeftButtonArea>
 
         <HeaderLogoArea>
