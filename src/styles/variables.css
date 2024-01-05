@@ -1,24 +1,15 @@
 html {
-  --border-color: #eee;
-  --font-sans: theme('fontFamily.sans');
-  --theme-color: var(--auto-theme-color, #33a6b8);
-  --hover-color: var(--auto-hover-color, #33a6b8);
-  --header-height: auto;
-  /* Accent color for form controls */
-  accent-color: var(--theme-color);
-
+  --theme-color: #33a6b8;
   /* make app like native app in mobile */
   -webkit-tap-highlight-color: transparent;
   /*  for firefox */
   scrollbar-color: var(--theme-color) transparent;
   scrollbar-width: thin;
-
-  font-family: var(--font-sans);
 }
 
 ::selection {
-  background-color: yellow !important;
-  color: #000000 !important;
+  background-color: #447ced !important;
+  color: #ffffff !important;
   text-shadow: none;
 }
 

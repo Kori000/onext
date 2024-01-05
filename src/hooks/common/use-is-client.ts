@@ -11,14 +11,3 @@ export const useIsClient = () => {
   }, [])
   return isClient
 }
-
-export const useIsClientTransition = () => {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    startTransition(() => {
-      setIsClient(true)
-    })
-  }, [])
-  return isClient
-}

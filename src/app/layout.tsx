@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../styles/index.css'
 
-import { ScrollTop } from '@/components/common/ScrollTop'
+import { AutoScrollTop } from '@/components/common/AutoScrollTop'
 import { siteConfig } from '@/config/site'
 import TanstackQueryProvider from '@/providers/TanstackQueryProvider'
 import { EventProvider } from '@/providers/event-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { ToastContainer } from 'react-toastify'
-import { Root } from '@/components/layout/root/Root'
+import { Root } from '@/layout/root/Root'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ToastContainer />
             </ThemeProvider>
           </EventProvider>
-          <ScrollTop />
+          <AutoScrollTop />
         </TanstackQueryProvider>
       </body>
     </html>

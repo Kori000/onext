@@ -3,6 +3,7 @@ import { atom, useAtomValue } from 'jotai'
 import { selectAtom } from 'jotai/utils'
 import type { ExtractAtomValue } from 'jotai'
 
+// 页面 视口
 export const viewportAtom = atom({
   /**
    * 640px
@@ -37,13 +38,15 @@ export const useViewport = <T>(
   selector: (value: ExtractAtomValue<typeof viewportAtom>) => T
 ): T =>
   useAtomValue(
-    // @ts-ignore
     selectAtom(
       viewportAtom,
       useCallback(atomValue => selector(atomValue), [])
     )
   )
 
+/**
+ * 是否是移动端(根据尺寸判断,  宽度是否小于 1024px)
+ */
 export const useIsMobile = () =>
   useViewport(
     useCallback(

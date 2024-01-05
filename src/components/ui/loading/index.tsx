@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { cn } from '@/lib/helper'
+import { cn } from '@/lib/utils'
 
 export type LoadingProps = {
   loadingText?: string

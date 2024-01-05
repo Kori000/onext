@@ -1,4 +1,4 @@
-import { cn } from '@/lib/helper'
+import { cn } from '@/lib/utils'
 
 export const NormalContainer: Component = props => {
   const { children, className } = props

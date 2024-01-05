@@ -8,7 +8,7 @@ import { atom, useAtomValue } from 'jotai'
 import type { HTMLMotionProps } from 'framer-motion'
 import type { PropsWithChildren } from 'react'
 
-import { cn } from '@/lib/helper'
+import { cn } from '@/lib/utils'
 import { jotaiStore } from '@/lib/store'
 
 import { useIsMobile } from '@/atoms'

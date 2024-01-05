@@ -4,45 +4,21 @@ body::-webkit-scrollbar {
 
 body {
   overflow: overlay;
-  /* scrollbar-gutter: stable; */
-}
-
-[data-theme='dark'] {
-  *::-webkit-scrollbar-thumb,
-  *::-webkit-scrollbar-thumb:hover {
-    border: 3px solid theme(colors.zinc.700/20);
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: theme(colors.zinc.800/96);
-  }
-
-  *::-webkit-scrollbar {
-    background: theme(colors.zinc.800);
-  }
 }
 
 *::-webkit-scrollbar-thumb,
 *::-webkit-scrollbar-thumb:hover {
   background-color: transparent;
-  border: 3px solid theme(colors.zinc.200/20);
+  border: 3px solid #38373d;
   border-radius: 5px;
 }
 
 *::-webkit-scrollbar {
   width: 5px !important;
   height: 5px !important;
-  background: theme(colors.zinc.100);
+  background: #232325;
 }
-
-/* *::-webkit-scrollbar-thumb {
-  background: theme(colors.neutral);
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: theme(colors.neutral-focus);
-} */
 
 *::-webkit-scrollbar-corner {
-  background: theme(colors.zinc.100);
+  background: #232325;
 }

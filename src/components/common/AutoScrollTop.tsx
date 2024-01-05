@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { isDev } from '@/lib/env'
 import { springScrollToTop } from '@/lib/scroller'
 
-export const ScrollTop = memo(() => {
+export const AutoScrollTop = memo(() => {
   const pathname = usePathname()
   useEffect(() => {
     if (isDev) return
@@ -15,4 +15,4 @@ export const ScrollTop = memo(() => {
   return null
 })
 
-ScrollTop.displayName = 'ScrollTop'
+AutoScrollTop.displayName = 'AutoScrollTop'
