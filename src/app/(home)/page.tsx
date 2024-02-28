@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
 
@@ -27,3 +28,7 @@ const page = () => {
 }
 
 export default page
+
+export const metadata: Metadata = {
+  title: '主页'
+}

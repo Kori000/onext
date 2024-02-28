@@ -43,7 +43,7 @@ const contexts: JSX.Element[] = [
     features={loadFeatures}
     strict
     key='framer'
-  />
+  />,
 ]
 export function Providers({ children }: PropsWithChildren) {
   return (
